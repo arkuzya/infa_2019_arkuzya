@@ -17,8 +17,7 @@ class Sharik:
 		self.Vy = Vy
 		self.Ax = Ax
 		self.Ay = Ay
-		self.r = r
-		self.ball = canv.create_oval(self.x-self.r, self.y-self.r, self.x+self.r, self.y+self.r, fill=choice(colors), width=0)
+		self.ball = canv.create_oval(self.x-self.r,self.y-self.r,self.x+self.r,self.y+self.r,fill = choice(colors), width=0)
 	def update(self):
 		self.x += self.Vx
 		self.y += self.Vy
@@ -35,9 +34,10 @@ class Sharik:
 			self.Vy = rnd(1,10)
 			self.Vx = rnd(-10,10)
 		canv.move(self.ball,self.Vx,self.Vy)
-		root.after(50, self.update)
+		root.after(50, update)
 
 def fullgame():
+	global ball1,ball2,ball3
 	ball1 = Sharik(rnd(50, 750), rnd(50, 550), rnd(-5, 5), rnd(-5, 5), 0, 0, rnd(20, 40))
 	ball2 = Sharik(rnd(50, 750), rnd(50, 550), rnd(-5, 5), rnd(-5, 5), 0, 0, rnd(20, 40))
 	ball3 = Sharik(rnd(50, 750), rnd(50, 550), rnd(-5, 5), rnd(-5, 5), 0, 0, rnd(20, 40))
